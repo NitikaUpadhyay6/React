@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [count,setCount]=useState(0);
 
+  let addCount=()=>{
+    // count=count+1
+    setCount(count+1)
+  }
+
+  let removeCount = () => {
+    setCount(count-1)
+  }
+  
   return (
     <>
-       <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <p>{count}</p>
+       <button onClick={addCount}>Click to add</button>
+       <button onClick={removeCount}>Click to remove</button>
     </>
   )
 }
